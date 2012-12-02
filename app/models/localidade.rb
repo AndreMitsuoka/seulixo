@@ -4,16 +4,17 @@ class Localidade < ActiveRecord::Base
   attr_accessible :nome, :habitantes
   validates_uniqueness_of :nome
 
-  def read_in_csv_idh
-  	csv_text = File.read('teste.csv')
-	csv = CSV.parse(csv_text, :headers => true)
-	
-	csv.each do |row|
-		@localidade = Localidade.new
-		
-		row = row.to_hash.with_indifferent_access
-		Localidade.create!(row.to_hash.symbolize_keys)
-	end	
+  def read_in_csv_localidade
+  	csv_text = File.read('habitantes.csv')
+  	csv = CSV.parse(csv_text, :headers => true)
+  	
+  	csv.each do |row|
+      row = row.to_hash.with_indifferent_access
+  		@localidade = Localidade.new
+  		@localidade.nome = row[:nome]
+      @localidade.habitantes = row[:habitantes]
+      @localidade.save
+  	end	
   end
 
   def self.get_local_id(param_nome)
