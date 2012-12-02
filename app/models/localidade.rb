@@ -8,12 +8,13 @@ class Localidade < ActiveRecord::Base
   	csv_text = File.read('teste.csv')
 	csv = CSV.parse(csv_text, :headers => true)
 	
-	csv.each do |row|
-		@localidade = Localidade.new
+	   csv.each do |row|
+	   	@localidade = Localidade.new
+
 		
-		row = row.to_hash.with_indifferent_access
-		Localidade.create!(row.to_hash.symbolize_keys)
-	end	
+	   	row = row.to_hash.with_indifferent_access
+	   	Localidade.create!(row.to_hash.symbolize_keys)
+	   end	
   end
 
   def self.get_local_id(param_nome)
