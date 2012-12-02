@@ -18,7 +18,6 @@ class Lixo < ActiveRecord::Base
 
 			id = Localidade.get_local_id(lnome)
 			
-
 			if id == 0	
 				@localidade.save
 				id = @localidade.id
@@ -26,7 +25,6 @@ class Lixo < ActiveRecord::Base
 			row.delete(:nome)
 				
 			row[:owner] = id		
-			p row
 			Lixo.create!(row.to_hash.symbolize_keys)
 		end
 	end

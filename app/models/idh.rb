@@ -15,7 +15,6 @@ class Idh < ActiveRecord::Base
 			lnome = @localidade.nome
 
 			id = Localidade.get_local_id(lnome)
-			puts id
 
 			if id == 0
 				@localidade.save
@@ -24,7 +23,6 @@ class Idh < ActiveRecord::Base
 			row.delete(:nome)
 				
 			row[:owner] = id		
-			p row
 			Idh.create!(row.to_hash.symbolize_keys)
 		end
 	end	 
