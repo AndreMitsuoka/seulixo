@@ -12,7 +12,7 @@ class CreateLixo < ActiveRecord::Migration
   		t.float :incineracao
   		t.float :nao_fixo
   		t.float :outros
-      t.integer :ano
+    t.integer :ano
     end
   end
 

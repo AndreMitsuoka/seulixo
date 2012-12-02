@@ -16,13 +16,14 @@ ActiveRecord::Schema.define(:version => 20121201173011) do
   create_table "idhs", :force => true do |t|
     t.integer "owner"
     t.float   "idhm"
-    t.float   "educacao"
     t.float   "renda"
-    t.float   "longetividade"
+    t.float   "longevidade"
+    t.float   "educacao"
     t.integer "ano"
   end
 
   create_table "lixos", :force => true do |t|
+    t.integer "owner"
     t.float   "total"
     t.float   "ceu_aberto"
     t.float   "areas_alagadas"
@@ -37,7 +38,8 @@ ActiveRecord::Schema.define(:version => 20121201173011) do
   end
 
   create_table "localidades", :force => true do |t|
-    t.string "nome"
+    t.string  "nome"
+    t.integer "habitantes"
   end
 
 end
