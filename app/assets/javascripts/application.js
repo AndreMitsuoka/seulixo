@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
 //= require bootstrap-transition
 //= require bootstrap-modal
 //= require bootstrap-dropdown
@@ -25,5 +24,5 @@
 //= require bootstrap-collapse
 //= require bootstrap-carousel
 //= require bootstrap-typeahead
-
 //= require contador
+//= require mellinho

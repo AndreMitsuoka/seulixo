@@ -3,7 +3,6 @@ Seulixo::Application.routes.draw do
 
   root :to => "localidades#index"
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

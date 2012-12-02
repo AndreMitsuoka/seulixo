@@ -1,23 +1,18 @@
-<h1>Listing localidades</h1>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @localidades.each do |localidade| %>
-  <tr>
-    <td><%= localidade.nome %></td>
-    <td><%= link_to 'Show', localidade %></td>
-    <td><%= link_to 'Edit', edit_localidade_path(localidade) %></td>
-    <td><%= link_to 'Destroy', localidade, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Localidade', new_localidade_path %>
+<!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+         <!-- <img class="img-circle" src="./files/140x140">-->
+          <h2>Classificação</h2>
+          <div id='table_div'></div>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <!--<img class="img-circle" src="./files/140x140">-->
+          <h2>Lixo coletado</h2><div id="chart_div"></div>
+          
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <!--<img class="img-circle" src="./files/140x140">-->
+          <h2>Destino do lixo no Brasil</h2>
+          <p><div id='pie'></div></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
