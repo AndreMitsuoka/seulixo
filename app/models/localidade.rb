@@ -5,7 +5,7 @@ class Localidade < ActiveRecord::Base
   validates_uniqueness_of :nome
 
   def read_in_csv_localidade
-  	csv_text = File.read('habitantes.csv')
+  	csv_text = File.read('habitantesTotal.csv')
   	csv = CSV.parse(csv_text, :headers => true)
   	
   	csv.each do |row|
